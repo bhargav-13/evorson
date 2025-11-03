@@ -265,6 +265,13 @@ body {
   transform: translateY(-2px);
 }
 
+.phone-number {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-top: 0.8rem;
+}
+
 /* ============================================
    RESPONSIVE DESIGN - ALL SCREEN SIZES
    ============================================ */
@@ -497,6 +504,10 @@ body {
     font-size: 1rem;
   }
 
+  .phone-number {
+    font-size: 1rem;
+  }
+
   .floating-circle {
     opacity: 0.4;
   }
@@ -557,6 +568,10 @@ body {
   }
 
   .email-link {
+    font-size: 0.95rem;
+  }
+
+  .phone-number {
     font-size: 0.95rem;
   }
 
@@ -627,6 +642,10 @@ body {
   }
 
   .email-link {
+    font-size: 0.9rem;
+  }
+
+  .phone-number {
     font-size: 0.9rem;
   }
 

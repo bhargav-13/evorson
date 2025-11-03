@@ -43,6 +43,14 @@ function App() {
         <p className="signature">
           - Everson Family
         </p>
+
+        <div className="contact-info">
+          <p>For inquiries, please contact us:</p>
+          <a href="mailto:eversonindia25@gmail.com" className="email-link">
+            eversonindia25@gmail.com
+          </a>
+          <p className="phone-number">📞 +91 9913477765</p>
+        </div>
       </div>
     </div>
   )
