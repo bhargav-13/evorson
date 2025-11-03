@@ -177,20 +177,20 @@ body {
   animation: fadeIn 0.8s ease-out 0.4s backwards;
 }
 
-.message-box {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  border-left: 4px solid #667eea;
-  padding: 1.5rem 2rem;
-  border-radius: 15px;
-  margin-bottom: 2.5rem;
-  animation: fadeIn 0.8s ease-out 0.6s backwards;
+.message {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  animation: fadeIn 0.8s ease-out 0.5s backwards;
 }
 
 .apology {
   font-size: 1.1rem;
-  color: #333;
+  color: #555;
   margin-bottom: 0.8rem;
-  font-weight: 500;
+  font-weight: 400;
+  animation: fadeIn 0.8s ease-out 0.6s backwards;
 }
 
 .signature {
@@ -198,6 +198,16 @@ body {
   color: #667eea;
   font-weight: 600;
   font-style: italic;
+  animation: fadeIn 0.8s ease-out 0.7s backwards;
+}
+
+.message-box {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-left: 4px solid #667eea;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 2.5rem;
+  animation: fadeIn 0.8s ease-out 0.6s backwards;
 }
 
 .progress-bar {
@@ -255,40 +265,157 @@ body {
   transform: translateY(-2px);
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN - ALL SCREEN SIZES
+   ============================================ */
+
+/* Large Tablets and Small Desktops (1024px and below) */
+@media (max-width: 1024px) {
+  .maintenance-container {
+    padding: 1.5rem;
+  }
+
+  .content {
+    max-width: 600px;
+    padding: 3.5rem 2.5rem;
+  }
+
+  .logo {
+    width: 160px;
+  }
+
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle, .message {
+    font-size: 1.05rem;
+  }
+
+  .floating-circle {
+    opacity: 0.6;
+  }
+
+  .circle-1 {
+    width: 350px;
+    height: 350px;
+  }
+
+  .circle-2 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .circle-3 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .circle-4 {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
   .maintenance-container {
     padding: 1rem;
   }
 
   .content {
+    max-width: 500px;
     padding: 3rem 2rem;
     border-radius: 20px;
   }
 
+  .logo-container {
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
   .main-title {
     font-size: 2rem;
+    margin-bottom: 1.2rem;
   }
 
-  .subtitle {
+  .subtitle, .message {
     font-size: 1rem;
-  }
-
-  .maintenance-icon {
-    width: 60px;
-    height: 60px;
+    margin-bottom: 2rem;
   }
 
   .message-box {
     padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .apology {
     font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .signature {
+    font-size: 0.95rem;
+  }
+
+  .progress-bar {
+    margin-bottom: 2rem;
   }
 
   .floating-circle {
     opacity: 0.5;
+  }
+
+  .circle-1 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle-2 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-3 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .circle-4 {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Large Mobile Phones (640px and below) */
+@media (max-width: 640px) {
+  .maintenance-container {
+    padding: 0.75rem;
+  }
+
+  .content {
+    padding: 2.5rem 1.75rem;
+    border-radius: 18px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .main-title {
+    font-size: 1.85rem;
+  }
+
+  .subtitle, .message {
+    font-size: 0.98rem;
+  }
+
+  .message-box {
+    padding: 1.2rem 1.4rem;
+    border-radius: 12px;
   }
 
   .circle-1 {
@@ -297,43 +424,309 @@ body {
   }
 
   .circle-2 {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
   }
 
   .circle-3 {
     width: 180px;
     height: 180px;
   }
+
+  .circle-4 {
+    width: 150px;
+    height: 150px;
+  }
 }
 
+/* Small Mobile Phones (480px and below) */
 @media (max-width: 480px) {
+  .maintenance-container {
+    padding: 0.5rem;
+  }
+
   .content {
     padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .logo-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .logo {
+    width: 110px;
   }
 
   .main-title {
     font-size: 1.75rem;
+    margin-bottom: 1rem;
   }
 
-  .subtitle {
+  .subtitle, .message {
     font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.6;
   }
 
   .message-box {
     padding: 1rem 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.8rem;
   }
 
   .apology {
     font-size: 0.95rem;
+    margin-bottom: 0.5rem;
   }
 
   .signature {
     font-size: 0.9rem;
   }
 
+  .progress-bar {
+    margin-bottom: 1.8rem;
+    height: 5px;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+
   .email-link {
     font-size: 1rem;
+  }
+
+  .floating-circle {
+    opacity: 0.4;
+  }
+
+  .circle-1 {
+    width: 180px;
+    height: 180px;
+    top: -8%;
+    left: -8%;
+  }
+
+  .circle-2 {
+    width: 140px;
+    height: 140px;
+    right: -8%;
+  }
+
+  .circle-3 {
+    width: 160px;
+    height: 160px;
+    bottom: -12%;
+  }
+
+  .circle-4 {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Extra Small Devices (375px and below) */
+@media (max-width: 375px) {
+  .content {
+    padding: 2rem 1.25rem;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle, .message {
+    font-size: 0.9rem;
+  }
+
+  .message-box {
+    padding: 0.9rem 1.1rem;
+  }
+
+  .apology {
+    font-size: 0.9rem;
+  }
+
+  .signature {
+    font-size: 0.85rem;
+  }
+
+  .email-link {
+    font-size: 0.95rem;
+  }
+
+  .circle-1 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle-2 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .circle-3 {
+    width: 140px;
+    height: 140px;
+  }
+
+  .circle-4 {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Very Small Devices (320px and below - like iPhone SE) */
+@media (max-width: 320px) {
+  .content {
+    padding: 1.75rem 1rem;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .logo-container {
+    margin-bottom: 1.2rem;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .subtitle, .message {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .message-box {
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .apology {
+    font-size: 0.85rem;
+  }
+
+  .signature {
+    font-size: 0.8rem;
+  }
+
+  .progress-bar {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
+  }
+
+  .email-link {
+    font-size: 0.9rem;
+  }
+
+  .circle-1,
+  .circle-2,
+  .circle-3,
+  .circle-4 {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Landscape Orientation for Mobile Devices */
+@media (max-height: 600px) and (orientation: landscape) {
+  .maintenance-container {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 2rem 2.5rem;
+    max-width: 90vw;
+  }
+
+  .logo-container {
+    margin-bottom: 1rem;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .subtitle, .message {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .message-box {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .progress-bar {
+    margin-bottom: 1.2rem;
+  }
+
+  .floating-circle {
+    opacity: 0.3;
+  }
+}
+
+/* Landscape Orientation for Tablets */
+@media (max-height: 768px) and (min-width: 769px) and (orientation: landscape) {
+  .content {
+    max-width: 80vw;
+    padding: 2.5rem 3rem;
+  }
+}
+
+/* Ultra-wide Screens (1440px and above) */
+@media (min-width: 1440px) {
+  .content {
+    max-width: 750px;
+    padding: 4.5rem 3.5rem;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .main-title {
+    font-size: 2.8rem;
+  }
+
+  .subtitle, .message {
+    font-size: 1.15rem;
+  }
+
+  .circle-1 {
+    width: 500px;
+    height: 500px;
+  }
+
+  .circle-2 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .circle-3 {
+    width: 450px;
+    height: 450px;
+  }
+
+  .circle-4 {
+    width: 350px;
+    height: 350px;
   }
 }
 
@@ -345,5 +738,17 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .animated-background {
+    display: none;
+  }
+
+  .content {
+    box-shadow: none;
+    border: 1px solid #ddd;
   }
 }
