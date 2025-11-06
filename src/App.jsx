@@ -27,16 +27,12 @@ function App() {
         </div>
 
         <h1 className="main-title">
-          Coming Soon{dots}
+          Website is under maintenance{dots}
         </h1>
         
         <div className="divider"></div>
 
         <p className="message">
-          Website is under maintenance
-        </p>
-
-        <p className="apology">
           Sorry for the inconvenience caused
         </p>
 
