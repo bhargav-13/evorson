@@ -1,81 +1,109 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  width: 100%;
-  height: 100%;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* #F7F7F5 - Warm off-white background */
+    --background: 40 20% 97%;
+    /* #2E2F30 - Charcoal text */
+    --foreground: 210 5% 18%;
+
+    --card: 40 20% 97%;
+    --card-foreground: 210 5% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 5% 18%;
+
+    /* #587583 - Slate blue primary */
+    --primary: 200 18% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    /* #A8B8A5 - Sage green secondary */
+    --secondary: 108 14% 68%;
+    --secondary-foreground: 210 5% 18%;
+
+    /* #B0B6B5 - Light grey-blue muted */
+    --muted: 180 7% 69%;
+    --muted-foreground: 210 5% 35%;
+
+    /* #E6A45C - Warm orange accent */
+    --accent: 32 71% 63%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 7% 85%;
+    --input: 180 7% 85%;
+    --ring: 200 18% 42%;
+
+    --radius: 0.5rem;
+
+    /* #8FAEB8 - Light blue-grey */
+    --slate-accent: 196 22% 64%;
+    
+    /* Custom brand colors */
+    --brand-slate: 200 18% 42%;
+    --brand-sage: 108 14% 68%;
+    --brand-cream: 40 20% 97%;
+    --brand-orange: 32 71% 63%;
+    --brand-grey-blue: 180 7% 69%;
+    --brand-charcoal: 210 5% 18%;
+    --brand-light-slate: 196 22% 64%;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    --background: 210 5% 18%;
+    --foreground: 40 20% 97%;
+
+    --card: 200 18% 32%;
+    --card-foreground: 40 20% 97%;
+
+    --popover: 200 18% 32%;
+    --popover-foreground: 40 20% 97%;
+
+    --primary: 196 22% 64%;
+    --primary-foreground: 210 5% 18%;
+
+    --secondary: 200 18% 32%;
+    --secondary-foreground: 40 20% 97%;
+
+    --muted: 200 18% 25%;
+    --muted-foreground: 180 7% 69%;
+
+    --accent: 32 71% 63%;
+    --accent-foreground: 210 5% 18%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 20% 97%;
+
+    --border: 200 18% 25%;
+    --input: 200 18% 25%;
+    --ring: 196 22% 64%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Jaldi', sans-serif;
+  }
+}
+
+
+@font-face {
+  font-family: 'Jaldi';
+  src: url('/src/assets/fonts/Jaldi-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
