@@ -1,3 +1,4 @@
+// components/MainPage/Footer.tsx
 import { Link } from "react-router-dom";
 import Logo from "@/assets/F_Logo.png";
 import Footer_Right from "@/assets/Footer_Right.png";
@@ -7,10 +8,10 @@ const Footer = () => {
     <footer className="relative bg-[#587583] text-white overflow-hidden">
       <div className="container mx-auto px-4 pt-20 pb-4 relative z-10">
         {/* Footer Columns */}
-        <div className="flex flex-wrap md:flex-nowrap text-sm">
+        <div className="flex flex-wrap md:flex-nowrap text-lg">
           {/* Contact - First on mobile */}
           <div className="w-full md:w-[280px] space-y-4 mb-8 md:mb-0">
-            <h3 className="font-bold mb-2">Contact</h3>
+            <h3 className="font-bold mb-2 text-xl">Contact</h3>
             <p>info@everson.in</p>
             <p>+91 94245 56793</p>
           </div>
@@ -22,8 +23,8 @@ const Footer = () => {
           <div className="w-full md:contents flex justify-between gap-4 mb-8 md:mb-0">
             {/* Quick Access */}
             <div className="flex-1 md:w-[150px] space-y-2">
-              <h3 className="font-bold mb-4">Quick Access</h3>
-              <ul className="space-y-1">
+              <h3 className="font-bold mb-4 text-xl">Quick Access</h3>
+              <ul className="space-y-2">
                 <li>
                   <Link to="/" className="hover:underline">
                     Home
@@ -57,8 +58,8 @@ const Footer = () => {
 
             {/* Categories */}
             <div className="flex-1 md:w-[150px] space-y-2">
-              <h3 className="font-bold mb-4">Categories</h3>
-              <ul className="space-y-1">
+              <h3 className="font-bold mb-4 text-xl">Categories</h3>
+              <ul className="space-y-2">
                 <li>Non woven</li>
                 <li>Loop Bag</li>
                 <li>Garbage Bag</li>
@@ -72,8 +73,8 @@ const Footer = () => {
 
             {/* Products */}
             <div className="flex-1 md:w-[150px] space-y-2">
-              <h3 className="font-bold mb-4">Products</h3>
-              <ul className="space-y-1">
+              <h3 className="font-bold mb-4 text-xl">Products</h3>
+              <ul className="space-y-2">
                 <li>Shoes Bag</li>
                 <li>Agri Bag</li>
                 <li>Box Bag</li>
@@ -88,7 +89,7 @@ const Footer = () => {
 
           {/* Address - Last on mobile */}
           <div className="w-full md:w-[280px] space-y-2">
-            <h3 className="font-bold mb-4">Address</h3>
+            <h3 className="font-bold mb-4 text-xl">Address</h3>
             <p>Samrudhi Industrial park 5 Block - A,</p>
             <p>Plot No. 02 Near Balson Valve Gate,</p>
             <p>Rajkot Gondal Highway Vill - Ribda</p>
@@ -97,37 +98,38 @@ const Footer = () => {
         </div>
 
         {/* Description Text - separate */}
-        <div className="mt-8">
-                    <p className="text-lg max-w-[300px] mb-8 leading-relaxed">
+        <div className="mt-10">
+          <p className="text-xl max-w-[400px] mb-8 leading-relaxed font-semibold">
             Everson India Limited
           </p>
-          <p className="text-lg max-w-[300px] leading-relaxed">
+          <p className="text-xl max-w-[400px] leading-relaxed">
             Manufacturer of premium non-woven bags, covers, and fabric products
             designed for strength, style, and sustainability.
           </p>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-6 flex flex-col items-start">
+        <div className="mt-10 pt-6 flex flex-col items-start">
           {/* Logo */}
-          <img src={Logo} alt="Everson Logo" className="h-12 w-auto mb-4" />
+          <img src={Logo} alt="Everson Logo" className="h-14 w-auto mb-4" />
 
           {/* Full-width border */}
           <div className="border-t border-white/20 w-full mb-4"></div>
 
           {/* Copyright text */}
-          <p className="text-sm text-left">
+          <p className="text-base text-left">
             © 2025 Everson — All Copyright Reserved
           </p>
         </div>
       </div>
 
-      {/* Footer Right Image - bottom on mobile */}
-      <img
-        src={Footer_Right}
-        alt="Footer Right"
-        className="absolute md:top-[175px] bottom-0 right-0 h-[200px] md:h-[350px] w-auto pointer-events-none"
-      />
+{/* Footer Right Image - always bottom right */}
+<img
+  src={Footer_Right}
+  alt="Footer Right"
+  className="absolute bottom-0 right-0 h-[200px] md:h-[350px] w-auto pointer-events-none object-contain"
+/>
+
     </footer>
   );
 };

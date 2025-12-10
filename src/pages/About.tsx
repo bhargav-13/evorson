@@ -112,51 +112,58 @@ const About = () => {
       </section>
 
       {/* Purpose in Every Product */}
-      <section className="py-16 px-4 bg-background text-[#394D57]">
-        <div className="container mx-auto max-w-8xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Product Collage */}
-            <div className="order-2 lg:order-1">
-              <div className="relative rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src={productCollage}
-                  alt="Product Collage"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+<section className="py-16 px-4 bg-background text-[#394D57]">
+  <div className="container mx-auto max-w-7xl">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Product Collage */}
+      <div className="order-2 lg:order-1 flex justify-center">
+        <div className="relative rounded-lg overflow-hidden shadow-xl w-full max-w-[500px] lg:max-w-[550px]">
+<img
+  src={productCollage}
+  alt="Product Collage"
+  className="w-full h-[400px] sm:h-[460px] md:h-[520px] object-cover rounded-lg"
+/>
 
-            {/* Content */}
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Purpose in Every Product
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                At Everson, we specialize in manufacturing a wide range of
-                non-woven fabric products designed for both everyday and
-                specialized applications. From eco friendly carry bags and
-                garbage bags to tablecloths, pillow covers, shoe bags, and
-                airline headrest covers, every product is crafted with
-                sustainability in mind.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                We combine advanced manufacturing technology with custom design
-                solutions to meet the unique needs of our clients across
-                industries like retail, hospitality, healthcare, aviation, and
-                packaging. Our goal is simple — to deliver smart, reliable, and
-                sustainable alternatives that make life easier while protecting
-                the planet.
-              </p>
-              <Button variant="outline" className="group rounded-full border-[#394D57]" asChild>
-                <Link to="/products">
-                  Explore more
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
+
+      {/* Content */}
+      <div className="order-1 lg:order-2">
+        <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-snug">
+          Purpose in Every Product
+        </h2>
+
+        <p className="text-lg sm:text-xl leading-relaxed mb-6 text-[#5B6C72]">
+          At Everson, we specialize in manufacturing a wide range of non-woven
+          fabric products designed for both everyday and specialized
+          applications. From eco-friendly carry bags and garbage bags to
+          tablecloths, pillow covers, shoe bags, and airline headrest covers —
+          every product is crafted with sustainability in mind.
+        </p>
+
+        <p className="text-lg sm:text-xl leading-relaxed mb-8 text-[#5B6C72]">
+          We combine advanced manufacturing technology with custom design
+          solutions to meet the unique needs of our clients across industries
+          like retail, hospitality, healthcare, aviation, and packaging. Our
+          goal is simple — to deliver smart, reliable, and sustainable
+          alternatives that make life easier while protecting the planet.
+        </p>
+
+        <Button
+          variant="outline"
+          className="group rounded-full border-[#394D57] text-[#394D57] hover:bg-[#394D57] hover:text-white px-6 py-3 text-base sm:text-lg transition-all"
+          asChild
+        >
+          <Link to="/products">
+            Explore more
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* The Spirit of Everson */}
       <section className="py-16 px-4 bg-background">

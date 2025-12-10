@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import our1 from "@/assets/our1.jpg";
 import our2 from "@/assets/our2.png";
-import our3 from "@/assets/our3.png";
+import our3 from "@/assets/loopbag.jpg";
 import our4 from "@/assets/our4.png";
 import our5 from "@/assets/our5.png";
 import our6 from "@/assets/our6.png";

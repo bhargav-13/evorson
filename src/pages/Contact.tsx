@@ -62,7 +62,7 @@ const Contact = () => {
               </div>
 
               <div className="mb-6">
-                <h3 className="font-medium text-[#394D57] text-2xl mb-1">Office Address</h3>
+                <h3 className="font-medium text-[#394D57] text-2xl mb-1">Works</h3>
                 <p className="text-muted-[#394D57]">
                   Samrudh Industrial park S Block - A,
                   <br />
@@ -75,22 +75,22 @@ const Contact = () => {
               </div>
 
               {/* Map Card */}
-              <Card className="p-4 mt-6">
-                <h3 className="font-semibold mb-3 text-foreground">Map</h3>
-                <div className="w-full h-[250px] bg-muted rounded-md overflow-hidden">
-                  <iframe
-                    title="Everson Map"
-                    src="https://www.google.com/maps?q=Rajkot+Gondal+Highway,+Ribda,+Gujarat,+India&output=embed"
-                    className="w-full h-full border-0"
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </Card>
+<div className="w-full h-[350px] sm:h-[450px] md:h-[550px] rounded-md overflow-hidden">
+  <iframe
+    title="Everson Map"
+    src="https://www.google.com/maps?q=Rajkot+Gondal+Highway,+Ribda,+Gujarat,+India&output=embed"
+    className="w-full h-[300px] border-0"
+    loading="lazy"
+    allowFullScreen
+  ></iframe>
+</div>
+
             </div>
 
             {/* Right Section - Contact Form */}
 <div>
   <form onSubmit={handleSubmit} className="space-y-6">
+    {/* First Name */}
     <div>
       <Label htmlFor="firstName">First Name*</Label>
       <Input
@@ -99,12 +99,11 @@ const Contact = () => {
         value={formData.firstName}
         onChange={handleChange}
         required
-        className="bg-[#F7F7F5] border border-[#587583] p-2 rounded-none"
+        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
       />
     </div>
 
-    
-
+    {/* Company */}
     <div>
       <Label htmlFor="company">Company</Label>
       <Input
@@ -112,10 +111,11 @@ const Contact = () => {
         name="company"
         value={formData.company}
         onChange={handleChange}
-        className="bg-[#F7F7F5] border border-[#587583] p-2 rounded-none"
+        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
       />
     </div>
 
+    {/* Email */}
     <div>
       <Label htmlFor="email">Email*</Label>
       <Input
@@ -125,10 +125,11 @@ const Contact = () => {
         value={formData.email}
         onChange={handleChange}
         required
-        className="bg-[#F7F7F5] border border-[#587583] p-2 rounded-none"
+        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
       />
     </div>
 
+    {/* Contact */}
     <div>
       <Label htmlFor="contact">Contact*</Label>
       <Input
@@ -138,31 +139,34 @@ const Contact = () => {
         value={formData.contact}
         onChange={handleChange}
         required
-        className="bg-[#F7F7F5] border border-[#587583] p-2 rounded-none"
+        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
       />
     </div>
 
+    {/* Description */}
     <div>
       <Label htmlFor="description">Description</Label>
       <Textarea
         id="description"
         name="description"
-        rows={16}   // Increased height
+        rows={16}
         value={formData.description}
         onChange={handleChange}
         placeholder="Enter your message..."
-        className="bg-[#F7F7F5] border border-[#587583] p-2 rounded-none"
+        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
       />
     </div>
 
+    {/* Submit Button */}
     <Button
       type="submit"
-      className="w-full bg-[#587583] hover:bg-[#48646f] text-white"
+      className="w-full bg-[#587583] hover:bg-[#48646f] text-white rounded-none transition-all"
     >
       Submit
     </Button>
   </form>
 </div>
+
 
           </div>
         </div>

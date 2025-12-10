@@ -93,9 +93,7 @@ const Products = () => {
       {/* Header */}
       <section className="text-center py-12 px-4">
         <h1 className="text-5xl font-bold text-[#3A4A4F] mb-3">Everson</h1>
-        <h2 className="text-3xl font-semibold text-[#3A4A4F] mb-6">
-          Products
-        </h2>
+        <h2 className="text-3xl font-semibold text-[#3A4A4F] mb-6">Products</h2>
         <p className="text-[#587583] text-lg max-w-3xl mx-auto leading-relaxed">
           Carry Your Brand with Unmatched Quality. Discover our premium
           non-woven bags designed for durability, perfected for your branding,
@@ -144,74 +142,75 @@ const Products = () => {
 
             {/* Right Side - Specifications */}
             <div className="text-[#3A4A4F] flex flex-col gap-6">
-              {/* Regular Size Table */}
+              {/* Regular Size */}
               <div>
-                <h4 className="text-lg font-semibold text-[#3A4A4F] mb-3">
-                  Regular Size
-                </h4>
-                <div className="grid grid-cols-[120px_1fr] border border-[#D9E0E1]">
-                  <div className="bg-[#F7F7F5] border-r border-[#D9E0E1] flex items-center justify-center text-[#587583] font-medium text-sm sm:text-base">
-                    Bag Size
-                  </div>
-                  {/* FIX: always 7 columns so sizes are side-by-side in boxes */}
-                  <div className="grid grid-cols-7">
-                    {product.regularSizes.map((size, i) => (
-                      <div
-                        key={i}
-                        className="border-l border-[#D9E0E1] flex items-center justify-center py-3 text-sm"
-                      >
-                        {size}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* GSM Row */}
-                {product.regularGSM && (
-                  <div className="grid grid-cols-[120px_1fr] border border-t-0 border-[#D9E0E1]">
-                    <div className="bg-[#F7F7F5] border-r border-[#D9E0E1] flex items-center justify-center text-[#587583] font-medium text-sm sm:text-base">
-                      GSM
-                    </div>
-                    <div className="flex items-center justify-center py-3 text-sm">
-                      {product.regularGSM}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Jumbo Size Table (if exists) */}
-              {product.jumboSizes && (
-                <div>
-                  <h4 className="text-lg font-semibold text-[#3A4A4F] mb-3">
-                    Jumbo Size
-                  </h4>
-                  <div className="grid grid-cols-[120px_1fr] border border-[#D9E0E1]">
-                    <div className="bg-[#F7F7F5] border-r border-[#D9E0E1] flex items-center justify-center text-[#587583] font-medium text-sm sm:text-base">
+                <h4 className="text-lg font-semibold mb-2">Regular Size</h4>
+                <div className="border border-[#D9E0E1]">
+                  {/* Bag Size Row */}
+                  <div className="flex border-b border-[#D9E0E1]">
+                    <div className="w-[120px] flex items-center justify-center border-r border-[#D9E0E1] text-[#587583] font-medium">
                       Bag Size
                     </div>
-                    <div className="grid grid-cols-7">
-                      {product.jumboSizes.map((size, i) => (
+                    <div className="flex flex-wrap flex-1">
+                      {product.regularSizes.map((size, i) => (
                         <div
                           key={i}
-                          className="border-l border-[#D9E0E1] flex items-center justify-center py-3 text-sm"
+                          className="flex-1 min-w-[80px] text-center border-l border-[#D9E0E1] py-2 text-sm"
                         >
                           {size}
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div className="grid grid-cols-[120px_1fr] border border-t-0 border-[#D9E0E1]">
-                    <div className="bg-[#F7F7F5] border-r border-[#D9E0E1] flex items-center justify-center text-[#587583] font-medium text-sm sm:text-base">
+
+                  {/* GSM Row */}
+                  <div className="flex">
+                    <div className="w-[120px] flex items-center justify-center border-r border-[#D9E0E1] text-[#587583] font-medium">
                       GSM
                     </div>
-                    <div className="flex items-center justify-center py-3 text-sm">
-                      {product.jumboGSM}
+                    <div className="flex-1 flex items-center justify-center py-2 text-sm">
+                      {product.regularGSM}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Jumbo Size */}
+              {product.jumboSizes && (
+                <div>
+                  <h4 className="text-lg font-semibold mb-2">Jumbo Size</h4>
+                  <div className="border border-[#D9E0E1]">
+                    {/* Bag Size Row */}
+                    <div className="flex border-b border-[#D9E0E1]">
+                      <div className="w-[120px] flex items-center justify-center border-r border-[#D9E0E1] text-[#587583] font-medium">
+                        Bag Size
+                      </div>
+                      <div className="flex flex-wrap flex-1">
+                        {product.jumboSizes.map((size, i) => (
+                          <div
+                            key={i}
+                            className="flex-1 min-w-[80px] text-center border-l border-[#D9E0E1] py-2 text-sm"
+                          >
+                            {size}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* GSM Row */}
+                    <div className="flex">
+                      <div className="w-[120px] flex items-center justify-center border-r border-[#D9E0E1] text-[#587583] font-medium">
+                        GSM
+                      </div>
+                      <div className="flex-1 flex items-center justify-center py-2 text-sm">
+                        {product.jumboGSM}
+                      </div>
                     </div>
                   </div>
                 </div>
               )}
 
-              {/* Notes Section */}
+              {/* Notes */}
               <ul className="list-disc ml-5 text-[#587583] text-sm space-y-1">
                 {product.notes.map((note, i) => (
                   <li key={i}>{note}</li>

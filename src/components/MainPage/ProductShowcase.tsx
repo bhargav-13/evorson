@@ -21,8 +21,9 @@ const AboutSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6">
             About Everson
           </h2>
+
           <p
-            className="text-base sm:text-lg md:text-xl leading-relaxed"
+            className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-white"
             style={{ fontFamily: "'Josefin Sans', sans-serif" }}
           >
             At Everson, we believe sustainability and innovation go hand in
@@ -35,6 +36,14 @@ const AboutSection = () => {
             progress, we help businesses move toward a cleaner and more
             sustainable future.
           </p>
+
+          {/* Simple Read More Button */}
+          <button
+            className="text-white text-lg sm:text-xl font-medium flex items-center justify-center mx-auto gap-1 hover:translate-x-1 transition-transform duration-300"
+            style={{ fontFamily: "'Josefin Sans', sans-serif" }}
+          >
+            Read More →
+          </button>
         </div>
       </section>
     </>
