@@ -7,6 +7,7 @@ import our4 from "@/assets/our4.png";
 import our5 from "@/assets/our5.png";
 import our6 from "@/assets/our6.png";
 import our7 from "@/assets/our7.jpg";
+import { useNavigate } from "react-router-dom"; // ✅ Added navigation import
 
 const products = [
   { img: our1, name: "Pillow Cover" },
@@ -23,6 +24,14 @@ const ProductCarousel = () => {
   const containerRef = useRef(null);
   const x = useMotionValue(0);
   const smoothX = useSpring(x, { stiffness: 50, damping: 30 });
+
+  const navigate = useNavigate(); // ✅ Initialize navigation
+
+  // ✅ Handle "Read More" button click
+  const handleReadMore = () => {
+    navigate("/products");
+    window.scrollTo(0, 0);
+  };
 
   // Infinite loop with duplicated items
   const infiniteProducts = [...products, ...products, ...products, ...products];
@@ -67,7 +76,10 @@ const ProductCarousel = () => {
       </p>
 
       {/* Carousel */}
-      <div ref={containerRef} className="relative w-full overflow-hidden h-[450px] flex items-center">
+      <div
+        ref={containerRef}
+        className="relative w-full overflow-hidden h-[450px] flex items-center"
+      >
         <motion.div
           style={{ x: smoothX }}
           className="flex gap-2 absolute left-1/2"
@@ -104,8 +116,11 @@ const ProductCarousel = () => {
         </motion.div>
       </div>
 
-      {/* Button */}
-      <button className="mt-10 inline-flex items-center border border-[#394D57] px-6 py-2 rounded hover:bg-[#394D57] hover:text-white transition">
+      {/* ✅ Read More Button */}
+      <button
+        onClick={handleReadMore}
+        className="mt-10 inline-flex items-center border border-[#394D57] px-6 py-2 rounded hover:bg-[#394D57] hover:text-white transition"
+      >
         Read More →
       </button>
     </div>

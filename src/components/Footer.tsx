@@ -1,9 +1,17 @@
 // components/MainPage/Footer.tsx
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Logo from "@/assets/F_Logo.png";
 import Footer_Right from "@/assets/Footer_Right.png";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  // ✅ Smooth scroll + navigate function
+  const handleNavigation = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+  };
+
   return (
     <footer className="relative bg-[#587583] text-white overflow-hidden">
       <div className="container mx-auto px-4 pt-20 pb-4 relative z-10">
@@ -26,29 +34,44 @@ const Footer = () => {
               <h3 className="font-bold mb-4 text-xl">Quick Access</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="hover:underline">
+                  <button
+                    onClick={() => handleNavigation("/")}
+                    className="hover:underline"
+                  >
                     Home
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:underline">
+                  <button
+                    onClick={() => handleNavigation("/about")}
+                    className="hover:underline"
+                  >
                     About
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/service" className="hover:underline">
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
                     Service
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/product" className="hover:underline">
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
                     Product
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:underline">
+                  <button
+                    onClick={() => handleNavigation("/contact")}
+                    className="hover:underline"
+                  >
                     Contact
-                  </Link>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -60,11 +83,46 @@ const Footer = () => {
             <div className="flex-1 md:w-[150px] space-y-2">
               <h3 className="font-bold mb-4 text-xl">Categories</h3>
               <ul className="space-y-2">
-                <li>Non woven</li>
-                <li>Loop Bag</li>
-                <li>Garbage Bag</li>
-                <li>Table cloth</li>
-                <li>Airline headset</li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Non woven
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Loop Bag
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Garbage Bag
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Table cloth
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Airline headset
+                  </button>
+                </li>
               </ul>
             </div>
 
@@ -75,11 +133,46 @@ const Footer = () => {
             <div className="flex-1 md:w-[150px] space-y-2">
               <h3 className="font-bold mb-4 text-xl">Products</h3>
               <ul className="space-y-2">
-                <li>Shoes Bag</li>
-                <li>Agri Bag</li>
-                <li>Box Bag</li>
-                <li>Pillow Cover</li>
-                <li>D-Cut Bag</li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Shoes Bag
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Agri Bag
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Box Bag
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    Pillow Cover
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => handleNavigation("/products")}
+                    className="hover:underline"
+                  >
+                    D-Cut Bag
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -123,13 +216,12 @@ const Footer = () => {
         </div>
       </div>
 
-{/* Footer Right Image - always bottom right */}
-<img
-  src={Footer_Right}
-  alt="Footer Right"
-  className="absolute bottom-0 right-0 h-[200px] md:h-[350px] w-auto pointer-events-none object-contain"
-/>
-
+      {/* Footer Right Image - always bottom right */}
+      <img
+        src={Footer_Right}
+        alt="Footer Right"
+        className="absolute bottom-0 right-0 h-[200px] md:h-[350px] w-auto pointer-events-none object-contain"
+      />
     </footer>
   );
 };

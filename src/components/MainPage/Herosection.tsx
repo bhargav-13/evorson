@@ -23,7 +23,12 @@ import S3 from "@/assets/S3.jpg";
 import S4 from "@/assets/S6.jpg";
 import S5 from "@/assets/S5.jpg";
 
+// ✅ Import navigation hook
+import { useNavigate } from "react-router-dom";
+
 const HeroAndFeatured = () => {
+  const navigate = useNavigate();
+
   // --- Middle Card Data ---
   const middleCards = [
     {
@@ -69,6 +74,12 @@ const HeroAndFeatured = () => {
   const currentRightImg =
     sideImages[rightIndex === leftIndex ? (rightIndex + 1) % sideImages.length : rightIndex];
 
+  // ✅ Function to handle "Explore More" click
+  const handleExploreMore = () => {
+    navigate("/products"); // redirect to your Products.tsx route
+    window.scrollTo(0, 0); // scroll to top
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -94,7 +105,12 @@ const HeroAndFeatured = () => {
             Everson blends all three into every non-woven bag and fabric product
             crafted for modern businesses and industries.
           </p>
-          <Button className="bg-[#587583] hover:bg-accent/90 text-accent-foreground px-6 py-4 text-sm sm:text-base">
+
+          {/* ✅ Explore More Button with click function */}
+          <Button
+            onClick={handleExploreMore}
+            className="bg-[#587583] hover:bg-accent/90 text-accent-foreground px-6 py-4 text-sm sm:text-base"
+          >
             Explore More
           </Button>
         </div>

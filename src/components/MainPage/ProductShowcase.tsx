@@ -1,7 +1,16 @@
 // components/MainPage/AboutSection.tsx
 import about from "@/assets/About.png";
+import { useNavigate } from "react-router-dom"; // ✅ Added navigation import
 
 const AboutSection = () => {
+  const navigate = useNavigate(); // ✅ Initialize navigation
+
+  // ✅ Function to handle button click
+  const handleReadMore = () => {
+    navigate("/about"); // Redirect to About.tsx page
+    window.scrollTo(0, 0); // Ensure page opens from the top
+  };
+
   return (
     <>
       {/* Google Font Import */}
@@ -37,8 +46,9 @@ const AboutSection = () => {
             sustainable future.
           </p>
 
-          {/* Simple Read More Button */}
+          {/* ✅ Updated Read More Button */}
           <button
+            onClick={handleReadMore}
             className="text-white text-lg sm:text-xl font-medium flex items-center justify-center mx-auto gap-1 hover:translate-x-1 transition-transform duration-300"
             style={{ fontFamily: "'Josefin Sans', sans-serif" }}
           >

@@ -53,7 +53,7 @@ import p102 from "@/assets/p102.png";
 import p103 from "@/assets/p103.png";
 import p104 from "@/assets/p104.png";
 
-// ✅ Product list (unchanged except added images)
+// ✅ Product list
 const productList = [
   {
     title: "Carry Bag (W, U Cut)",
@@ -169,22 +169,24 @@ const Products = () => {
           >
             {/* Left Side - Images */}
             <div className="grid grid-cols-5 md:grid-cols-5 gap-4 items-start">
-              <div className="flex flex-col gap-3 col-span-1">
+              {/* Left smaller images - adjusted height */}
+              <div className="flex flex-col justify-between col-span-1 h-full">
                 {product.images.slice(1).map((img, i) => (
                   <img
                     key={i}
                     src={img}
                     alt={`${product.title} Small ${i + 1}`}
-                    className="w-full h-24 object-cover border border-gray-300"
+                    className="w-full object-cover border border-gray-300 flex-1"
                   />
                 ))}
               </div>
 
+              {/* Main image - occupies 4 columns */}
               <div className="col-span-4 flex flex-col items-center">
                 <img
                   src={product.images[0]}
                   alt={product.title}
-                  className="object-cover w-full max-h-[400px] border border-gray-300"
+                  className="object-cover w-full h-[400px] border border-gray-300"
                 />
                 <p className="w-full text-center text-[#3A4A4F] font-medium text-lg mt-3">
                   {product.title}

@@ -1,8 +1,17 @@
 // components/MainPage/BeyondFiber.tsx
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom"; // ✅ Added import for navigation
 
 const BeyondFiber = () => {
+  const navigate = useNavigate(); // ✅ initialize navigate
+
+  // ✅ Function to handle button click
+  const handleExploreProducts = () => {
+    navigate("/products");
+    window.scrollTo(0, 0);
+  };
+
   return (
     <section className="bg-background py-12 sm:py-16 md:py-20 px-4 text-[#587583]">
       {/* Matches Hero Section Width */}
@@ -25,6 +34,7 @@ const BeyondFiber = () => {
               Engineered for <br /> performance
             </h3>
             <Button
+              onClick={handleExploreProducts} // ✅ added click handler
               variant="outline"
               className="rounded-full border-[#587583] text-[#587583] hover:bg-[#587583] hover:text-white transition-colors px-6 py-3 text-sm sm:text-base"
             >

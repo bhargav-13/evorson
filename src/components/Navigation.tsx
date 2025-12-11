@@ -1,10 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Logo from "@/assets/Logo.png"; // adjust path if needed
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  // ✅ Scroll to top + navigate
+  const handleNavigate = (path: string) => {
+    window.scrollTo(0, 0); // scroll to top
+    navigate(path);
+    setIsOpen(false); // close mobile menu if open
+  };
 
   // Load Inter font only for header
   useEffect(() => {
@@ -29,27 +37,39 @@ const Navigation = () => {
       >
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <button
+            onClick={() => handleNavigate("/")}
+            className="flex items-center focus:outline-none"
+          >
             <img src={Logo} alt="Logo" className="w-48 object-contain" />
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-10 text-md text-[#394D57]">
-            <Link to="/" className="hover:text-accent transition-colors">
+            <button
+              onClick={() => handleNavigate("/")}
+              className="hover:text-accent transition-colors"
+            >
               Home
-            </Link>
-            <Link to="/about" className="hover:text-accent transition-colors">
+            </button>
+            <button
+              onClick={() => handleNavigate("/about")}
+              className="hover:text-accent transition-colors"
+            >
               About
-            </Link>
-            <Link
-              to="/products"
+            </button>
+            <button
+              onClick={() => handleNavigate("/products")}
               className="hover:text-accent transition-colors"
             >
               Products
-            </Link>
-            <Link to="/contact" className="hover:text-accent transition-colors">
+            </button>
+            <button
+              onClick={() => handleNavigate("/contact")}
+              className="hover:text-accent transition-colors"
+            >
               Contact
-            </Link>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -65,34 +85,30 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-black/10 backdrop-blur-md">
             <div className="flex flex-col space-y-4 text-base font-medium text-black">
-              <Link
-                to="/"
-                className="hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
+              <button
+                onClick={() => handleNavigate("/")}
+                className="hover:text-accent transition-colors text-left"
               >
                 HOME
-              </Link>
-              <Link
-                to="/about"
-                className="hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
+              </button>
+              <button
+                onClick={() => handleNavigate("/about")}
+                className="hover:text-accent transition-colors text-left"
               >
                 ABOUT
-              </Link>
-              <Link
-                to="/products"
-                className="hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
+              </button>
+              <button
+                onClick={() => handleNavigate("/products")}
+                className="hover:text-accent transition-colors text-left"
               >
                 PRODUCTS
-              </Link>
-              <Link
-                to="/contact"
-                className="hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
+              </button>
+              <button
+                onClick={() => handleNavigate("/contact")}
+                className="hover:text-accent transition-colors text-left"
               >
                 CONTACT
-              </Link>
+              </button>
             </div>
           </div>
         )}

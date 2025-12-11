@@ -149,16 +149,20 @@ const About = () => {
           alternatives that make life easier while protecting the planet.
         </p>
 
-        <Button
-          variant="outline"
-          className="group rounded-full border-[#394D57] text-[#394D57] hover:bg-[#394D57] hover:text-white px-6 py-3 text-base sm:text-lg transition-all"
-          asChild
-        >
-          <Link to="/products">
-            Explore more
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </Button>
+<Button
+  variant="outline"
+  className="group rounded-full border-[#394D57] text-[#394D57] hover:bg-[#394D57] hover:text-white px-6 py-3 text-base sm:text-lg transition-all"
+  asChild
+>
+  <Link
+    to="/products"
+    onClick={() => window.scrollTo(0, 0)} // ✅ scrolls to top on click
+  >
+    Explore more
+    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+  </Link>
+</Button>
+
       </div>
     </div>
   </div>

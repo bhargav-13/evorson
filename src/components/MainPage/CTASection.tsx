@@ -1,10 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Vector from "@/assets/Vector.png";
 import CTA1 from "@/assets/CTA1.png";
 import CTA2 from "@/assets/CTA2.png";
 
 const CTASection = () => {
+  const navigate = useNavigate();
+
+  // ✅ Scroll to top + navigate
+  const handleNavigateToContact = (e: React.MouseEvent) => {
+    e.preventDefault(); // stop Link's default behavior first
+    window.scrollTo(0, 0); // scroll to top
+    navigate("/contact"); // navigate manually
+  };
+
   return (
     <section className="py-16 px-4 bg-background flex justify-center">
       <div
@@ -21,37 +30,35 @@ const CTASection = () => {
               Start Optimizing Your Financial Operations Today
             </h2>
             <p className="text-lg text-muted-foreground mb-6 text-[#587583]">
-              Offers two paths, catering to users who are ready to buy and those who need more information.
+              Offers two paths, catering to users who are ready to buy and those
+              who need more information.
             </p>
-<Button
-  className="bg-transparent border-2 border-[#587583] text-[#587583] hover:bg-[#587583]/10 hover:text-[#587583] transition-colors rounded-full"
-  asChild
->
-  <Link to="/contact">
-    Schedule a Demo →
-  </Link>
-</Button>
 
-
+            {/* ✅ Button that scrolls to top before redirect */}
+            <Button
+              onClick={handleNavigateToContact}
+              className="bg-transparent border-2 border-[#587583] text-[#587583] hover:bg-[#587583]/10 hover:text-[#587583] transition-colors rounded-full"
+            >
+              Schedule a Demo →
+            </Button>
           </div>
 
           {/* --- Right Image Stack --- */}
-<div className="relative flex justify-center items-center mt-8 md:-mt-10">
-  {/* Back Image (CTA2) */}
-  <img
-    src={CTA2}
-    alt="CTA Visual 1"
-    className="w-[250px] md:w-[350px] rounded-xl relative md:top-12 md:left-28 top-8 left-16  "
-  />
+          <div className="relative flex justify-center items-center mt-8 md:-mt-10">
+            {/* Back Image (CTA2) */}
+            <img
+              src={CTA2}
+              alt="CTA Visual 1"
+              className="w-[250px] md:w-[350px] rounded-xl relative md:top-12 md:left-28 top-8 left-16"
+            />
 
-  {/* Front Image (CTA1) */}
-  <img
-    src={CTA1}
-    alt="CTA Visual 2"
-    className="w-[250px] md:w-[350px] rounded-xl absolute top-10 -left-5 md:top-[60px] md:left-16 -rotate-8 transform "
-  />
-</div>
-
+            {/* Front Image (CTA1) */}
+            <img
+              src={CTA1}
+              alt="CTA Visual 2"
+              className="w-[250px] md:w-[350px] rounded-xl absolute top-10 -left-5 md:top-[60px] md:left-16 -rotate-8 transform"
+            />
+          </div>
         </div>
       </div>
     </section>
