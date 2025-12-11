@@ -1,10 +1,59 @@
 // components/MainPage/Products.tsx
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import carryBag1 from "@/assets/pro1.png";
-import carryBag2 from "@/assets/pro2.png";
-import carryBag3 from "@/assets/pro3.png";
 
+// ✅ Import all product images
+import p11 from "@/assets/p11.png";
+import p12 from "@/assets/p12.png";
+import p13 from "@/assets/p13.png";
+import p14 from "@/assets/p14.png";
+
+import p21 from "@/assets/p21.png";
+import p22 from "@/assets/p22.png";
+import p23 from "@/assets/p23.png";
+import p24 from "@/assets/p24.png";
+
+import p31 from "@/assets/p31.png";
+import p32 from "@/assets/p32.png";
+import p33 from "@/assets/p33.png";
+import p34 from "@/assets/p34.png";
+
+import p41 from "@/assets/p41.png";
+import p42 from "@/assets/p42.png";
+import p43 from "@/assets/p43.png";
+import p44 from "@/assets/p44.png";
+
+import p51 from "@/assets/p51.png";
+import p52 from "@/assets/p52.png";
+import p53 from "@/assets/p53.png";
+import p54 from "@/assets/p54.png";
+
+import p61 from "@/assets/p61.png";
+import p62 from "@/assets/p62.png";
+import p63 from "@/assets/p63.png";
+import p64 from "@/assets/p64.png";
+
+import p71 from "@/assets/p71.png";
+import p72 from "@/assets/p72.png";
+import p73 from "@/assets/p73.png";
+import p74 from "@/assets/p74.png";
+
+import p81 from "@/assets/p81.png";
+import p82 from "@/assets/p82.png";
+import p83 from "@/assets/p83.png";
+import p84 from "@/assets/p84.png";
+
+import p91 from "@/assets/p91.png";
+import p92 from "@/assets/p92.png";
+import p93 from "@/assets/p93.png";
+import p94 from "@/assets/p94.png";
+
+import p101 from "@/assets/p101.png";
+import p102 from "@/assets/p102.png";
+import p103 from "@/assets/p103.png";
+import p104 from "@/assets/p104.png";
+
+// ✅ Product list (unchanged except added images)
 const productList = [
   {
     title: "Carry Bag (W, U Cut)",
@@ -13,12 +62,14 @@ const productList = [
     regularGSM: "20 to 80",
     jumboGSM: "30 to 80",
     notes: ["Customized Size Available"],
+    images: [p11, p12, p13, p14],
   },
   {
     title: "Shopping Bag",
     regularSizes: ["9×12", "10×14", "12×16", "12×18", "14×19", "16×24"],
     regularGSM: "40 to 80",
     notes: ["Customized Size Available"],
+    images: [p21, p22, p23, p24],
   },
   {
     title: "Loop Handle Bag",
@@ -28,18 +79,21 @@ const productList = [
       "Customized Size Available",
       "Laminated and Printed Bags Also Available",
     ],
+    images: [p31, p32, p33, p34],
   },
   {
     title: "Shoes Bag / Apron Bag",
     regularSizes: ["10×14", "12×14", "14×14", "15×14", "16×14", "17×14", "18×14"],
     regularGSM: "50 to 80",
     notes: ["Customized Size Available"],
+    images: [p41, p42, p43, p44],
   },
   {
     title: "Airline/Cinema Headrest",
     regularSizes: ["11×13"],
     regularGSM: "60 to 80",
     notes: ["Customized Size Available"],
+    images: [p51, p52, p53, p54],
   },
   {
     title: "Non Woven Rolls",
@@ -52,6 +106,7 @@ const productList = [
       "Supports Primary/Secondary Packing",
       "Laminated Fabric Also Available",
     ],
+    images: [p61, p62, p63, p64],
   },
   {
     title: "Box Bag",
@@ -61,6 +116,7 @@ const productList = [
       "Customized Size Also Available",
       "Laminated Fabric Also Available",
     ],
+    images: [p71, p72, p73, p74],
   },
   {
     title: "Garbage Bag",
@@ -70,18 +126,21 @@ const productList = [
       "Customized Size Also Available",
       "Flat Garbage Bags Also Available",
     ],
+    images: [p81, p82, p83, p84],
   },
   {
     title: "Pillow Cover",
     regularSizes: ["17×19", "15×24", "18×24", "18×27"],
     regularGSM: "60 to 80",
     notes: ["Customized Size Also Available"],
+    images: [p91, p92, p93, p94],
   },
   {
     title: "Table Cloth",
     regularSizes: ["24×24", "30×30", "36×36", "37×40", "42×42"],
     regularGSM: "60 to 80",
     notes: ["Customized Size Also Available"],
+    images: [p101, p102, p103, p104],
   },
 ];
 
@@ -111,26 +170,19 @@ const Products = () => {
             {/* Left Side - Images */}
             <div className="grid grid-cols-5 md:grid-cols-5 gap-4 items-start">
               <div className="flex flex-col gap-3 col-span-1">
-                <img
-                  src={carryBag1}
-                  alt={`${product.title} Small 1`}
-                  className="w-full h-24 object-cover border border-gray-300"
-                />
-                <img
-                  src={carryBag2}
-                  alt={`${product.title} Small 2`}
-                  className="w-full h-24 object-cover border border-gray-300"
-                />
-                <img
-                  src={carryBag3}
-                  alt={`${product.title} Small 3`}
-                  className="w-full h-24 object-cover border border-gray-300"
-                />
+                {product.images.slice(1).map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`${product.title} Small ${i + 1}`}
+                    className="w-full h-24 object-cover border border-gray-300"
+                  />
+                ))}
               </div>
 
               <div className="col-span-4 flex flex-col items-center">
                 <img
-                  src={carryBag2}
+                  src={product.images[0]}
                   alt={product.title}
                   className="object-cover w-full max-h-[400px] border border-gray-300"
                 />
