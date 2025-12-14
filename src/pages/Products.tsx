@@ -169,24 +169,24 @@ const Products = () => {
           >
             {/* Left Side - Images */}
             <div className="grid grid-cols-5 md:grid-cols-5 gap-4 items-start">
-              {/* Left smaller images - adjusted height */}
-              <div className="flex flex-col justify-between col-span-1 h-full">
+              {/* Left smaller images (match height of main image) */}
+              <div className="flex flex-col justify-between col-span-1 h-[400px] space-y-3">
                 {product.images.slice(1).map((img, i) => (
                   <img
                     key={i}
                     src={img}
                     alt={`${product.title} Small ${i + 1}`}
-                    className="w-full object-cover border border-gray-300 flex-1"
+                    className="w-full h-1/3 object-cover border border-gray-300 rounded-md"
                   />
                 ))}
               </div>
 
-              {/* Main image - occupies 4 columns */}
+              {/* Main image */}
               <div className="col-span-4 flex flex-col items-center">
                 <img
                   src={product.images[0]}
                   alt={product.title}
-                  className="object-cover w-full h-[400px] border border-gray-300"
+                  className="object-cover w-full h-[400px] border border-gray-300 rounded-md"
                 />
                 <p className="w-full text-center text-[#3A4A4F] font-medium text-lg mt-3">
                   {product.title}
@@ -234,7 +234,6 @@ const Products = () => {
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Jumbo Size</h4>
                   <div className="border border-[#D9E0E1]">
-                    {/* Bag Size Row */}
                     <div className="flex border-b border-[#D9E0E1]">
                       <div className="w-[120px] flex items-center justify-center border-r border-[#D9E0E1] text-[#587583] font-medium">
                         Bag Size
