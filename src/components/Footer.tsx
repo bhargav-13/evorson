@@ -20,8 +20,23 @@ const Footer = () => {
           {/* Contact - First on mobile */}
           <div className="w-full md:w-[280px] space-y-4 mb-8 md:mb-0">
             <h3 className="font-bold mb-2 text-xl">Contact</h3>
-            <p>info@everson.in</p>
-            <p>+91 94245 56793</p>
+            <p>
+              <a
+                href="mailto:info@everson.in"
+                className="hover:underline"
+              >
+                info@everson.in
+              </a>
+            </p>
+            {/* ✅ Updated phone number with clickable dial link */}
+            <p>
+              <a
+                href="tel:+917905378953"
+                className="hover:underline"
+              >
+                +91 79053 78953
+              </a>
+            </p>
           </div>
 
           {/* Huge gap after Contact - Desktop only */}

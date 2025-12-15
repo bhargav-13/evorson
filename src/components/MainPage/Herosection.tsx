@@ -120,7 +120,7 @@ const HeroAndFeatured = () => {
       <section className="px-4 bg-background py-6 sm:py-10">
         <div className="container mx-auto">
           <div className="grid grid-cols-12 gap-6">
-            {/* Left Card (Blinking Images) */}
+            {/* Left Card */}
             <Card className="overflow-hidden group cursor-pointer h-[250px] sm:h-[300px] md:h-[350px] col-span-12 md:col-span-3">
               <AnimatePresence mode="wait">
                 <motion.img
@@ -131,7 +131,8 @@ const HeroAndFeatured = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="w-full h-full object-cover"
+                  // ✅ Mobile fix only
+                  className="w-full h-full object-cover md:object-cover sm:object-contain"
                 />
               </AnimatePresence>
             </Card>
@@ -152,7 +153,8 @@ const HeroAndFeatured = () => {
                     <img
                       src={currentCard.img}
                       alt={currentCard.title}
-                      className="w-full h-full object-cover rounded-lg"
+                      // ✅ Mobile fix only
+                      className="w-full h-full object-cover md:object-cover sm:object-contain rounded-lg"
                     />
                   </div>
 
@@ -180,7 +182,7 @@ const HeroAndFeatured = () => {
               </AnimatePresence>
             </Card>
 
-            {/* Right Card (Blinking Images) */}
+            {/* Right Card */}
             <Card className="overflow-hidden group cursor-pointer h-[250px] sm:h-[300px] md:h-[350px] col-span-12 md:col-span-3">
               <AnimatePresence mode="wait">
                 <motion.img
@@ -191,7 +193,8 @@ const HeroAndFeatured = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="w-full h-full object-cover"
+                  // ✅ Mobile fix only
+                  className="w-full h-full object-cover md:object-cover sm:object-contain"
                 />
               </AnimatePresence>
             </Card>

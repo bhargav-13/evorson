@@ -59,11 +59,19 @@ const Contact = () => {
               <div className="mb-8">
                 <h3 className="text-2xl font-semibold text-[#394D57] mb-2">Info</h3>
                 <p className="text-base text-[#394D57]">
-                  <a href="tel:+917905378953" className="hover:underline">
+                  {/* Phone link opens dial pad */}
+                  <a
+                    href="tel:+917905378953"
+                    className="text-[#394D57] hover:text-[#587583] hover:underline transition-colors duration-200"
+                  >
                     +91 79053 78953
                   </a>
                   <br />
-                  <a href="mailto:sales@everson.in" className="hover:underline">
+                  {/* Email link */}
+                  <a
+                    href="mailto:sales@everson.in"
+                    className="text-[#394D57] hover:text-[#587583] hover:underline transition-colors duration-200"
+                  >
                     sales@everson.in
                   </a>
                 </p>

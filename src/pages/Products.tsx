@@ -145,6 +145,17 @@ const productList = [
 ];
 
 const Products = () => {
+  // Helper function: decide label
+  const getLabel = (title: string) => {
+    const sizeOnly = [
+      "Pillow Cover",
+      "Table Cloth",
+      "Non Woven Rolls",
+      "Airline/Cinema Headrest",
+    ];
+    return sizeOnly.includes(title) ? "Size" : "Bag Size";
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FAFA]">
       <Navigation />
@@ -169,7 +180,7 @@ const Products = () => {
           >
             {/* Left Side - Images */}
             <div className="grid grid-cols-5 md:grid-cols-5 gap-4 items-start">
-              {/* Left smaller images (match height of main image) */}
+              {/* Left smaller images */}
               <div className="flex flex-col justify-between col-span-1 h-[400px] space-y-3">
                 {product.images.slice(1).map((img, i) => (
                   <img
@@ -203,7 +214,7 @@ const Products = () => {
                   {/* Bag Size Row */}
                   <div className="flex border-b border-[#D9E0E1]">
                     <div className="w-[120px] flex items-center justify-center border-r border-[#D9E0E1] text-[#587583] font-medium">
-                      Bag Size
+                      {getLabel(product.title)}
                     </div>
                     <div className="flex flex-wrap flex-1">
                       {product.regularSizes.map((size, i) => (
@@ -236,7 +247,7 @@ const Products = () => {
                   <div className="border border-[#D9E0E1]">
                     <div className="flex border-b border-[#D9E0E1]">
                       <div className="w-[120px] flex items-center justify-center border-r border-[#D9E0E1] text-[#587583] font-medium">
-                        Bag Size
+                        {getLabel(product.title)}
                       </div>
                       <div className="flex flex-wrap flex-1">
                         {product.jumboSizes.map((size, i) => (
