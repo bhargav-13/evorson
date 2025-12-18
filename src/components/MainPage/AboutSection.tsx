@@ -70,7 +70,7 @@ const BeyondFiber = () => {
               Fluid Barriers
             </h4>
             <p className="text-base sm:text-lg text-[#587583] leading-relaxed">
-              Hydrophobic properties make our Table Cloths and
+              Hydrophobic properties make our Table Cloths
               spill-resistant.
             </p>
           </Card>

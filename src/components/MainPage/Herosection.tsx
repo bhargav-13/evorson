@@ -1,4 +1,3 @@
-// components/MainPage/HeroAndFeatured.tsx
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -7,29 +6,24 @@ import toteBags from "@/assets/hero3.png";
 import HeroBg from "@/assets/HeroBG.png";
 import Logo from "@/assets/Logo.png";
 
-// Animated imports
 import { motion, AnimatePresence } from "framer-motion";
 
-// Rotating card images (middle)
 import c1 from "@/assets/c1.png";
 import c2 from "@/assets/c2.png";
 import c3 from "@/assets/c3.png";
 import c4 from "@/assets/c4.png";
 
-// Side rotation images
 import S1 from "@/assets/S1.jpg";
 import S2 from "@/assets/S2.jpg";
 import S3 from "@/assets/S3.jpg";
 import S4 from "@/assets/S6.jpg";
 import S5 from "@/assets/S5.jpg";
 
-// ✅ Import navigation hook
 import { useNavigate } from "react-router-dom";
 
 const HeroAndFeatured = () => {
   const navigate = useNavigate();
 
-  // --- Middle Card Data ---
   const middleCards = [
     {
       title: "W Cut Bag",
@@ -53,19 +47,19 @@ const HeroAndFeatured = () => {
     },
   ];
 
-  // --- Side Images ---
   const sideImages = [S1, S2, S3, S4, S5];
 
   const [middleIndex, setMiddleIndex] = useState(0);
   const [leftIndex, setLeftIndex] = useState(0);
-  const [rightIndex, setRightIndex] = useState(1); // Start with a different image
+  const [rightIndex, setRightIndex] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setMiddleIndex((prev) => (prev + 1) % middleCards.length);
       setLeftIndex((prev) => (prev + 1) % sideImages.length);
       setRightIndex((prev) => (prev + 1) % sideImages.length);
-    }, 3000); // every 3 seconds
+    }, 3000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -74,10 +68,9 @@ const HeroAndFeatured = () => {
   const currentRightImg =
     sideImages[rightIndex === leftIndex ? (rightIndex + 1) % sideImages.length : rightIndex];
 
-  // ✅ Function to handle "Explore More" click
   const handleExploreMore = () => {
-    navigate("/products"); // redirect to your Products.tsx route
-    window.scrollTo(0, 0); // scroll to top
+    navigate("/products");
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -95,18 +88,15 @@ const HeroAndFeatured = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="hidden md:block absolute inset-0"></div>
-
         <div className="relative container mx-auto text-center max-w-4xl mt-16 text-[#587583] px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 sm:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Durability. Design. Sustainability.
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto text-[#B0B6B5] leading-relaxed">
+          <p className="text-base sm:text-lg md:text-2xl mb-6 max-w-3xl mx-auto text-[#B0B6B5]">
             Everson blends all three into every non-woven bag and fabric product
             crafted for modern businesses and industries.
           </p>
 
-          {/* ✅ Explore More Button with click function */}
           <Button
             onClick={handleExploreMore}
             className="bg-[#587583] hover:bg-accent/90 text-accent-foreground px-6 py-4 text-sm sm:text-base"
@@ -116,61 +106,58 @@ const HeroAndFeatured = () => {
         </div>
       </section>
 
-      {/* Featured Products Grid */}
+      {/* Featured Section */}
       <section className="px-4 bg-background py-6 sm:py-10">
         <div className="container mx-auto">
           <div className="grid grid-cols-12 gap-6">
-            {/* Left Card */}
-            <Card className="overflow-hidden group cursor-pointer h-[250px] sm:h-[300px] md:h-[350px] col-span-12 md:col-span-3">
+            {/* Left */}
+            <Card className="overflow-hidden h-[250px] sm:h-[300px] md:h-[350px] col-span-12 md:col-span-3">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentLeftImg}
                   src={currentLeftImg}
-                  alt="Left Product"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.6 }}
-                  // ✅ Mobile fix only
-                  className="w-full h-full object-cover md:object-cover sm:object-contain"
+                  className="w-full h-full object-cover"
                 />
               </AnimatePresence>
             </Card>
 
-            {/* Middle Animated Card */}
-            <Card className="overflow-hidden group cursor-pointer bg-[#8FAEB8] flex flex-col md:flex-row gap-4 h-auto md:h-[350px] col-span-12 md:col-span-6 p-4">
+            {/* ✅ FIXED MIDDLE CARD */}
+            <Card className="bg-[#8FAEB8] col-span-12 md:col-span-6 p-4 flex flex-col md:flex-row md:h-[350px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentCard.title}
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 40 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
+                  exit={{ opacity: 0, x: -40 }}
                   transition={{ duration: 0.6 }}
-                  className="flex flex-col md:flex-row gap-4 items-center"
+                  className="flex flex-col md:flex-row gap-4 w-full"
                 >
                   {/* Image */}
-                  <div className="w-full md:w-1/2 h-[200px] md:h-full">
+                  <div className="w-full md:w-1/2 h-[180px] sm:h-[220px] md:h-full flex-shrink-0">
                     <img
                       src={currentCard.img}
                       alt={currentCard.title}
-                      // ✅ Mobile fix only
-                      className="w-full h-full object-cover md:object-cover sm:object-contain rounded-lg"
+                      className="w-full h-full object-contain md:object-cover rounded-lg"
                     />
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-col justify-between md:w-1/2 h-full p-2 sm:p-4 text-center md:text-left">
+                  <div className="flex flex-col justify-between md:w-1/2 text-center md:text-left px-2">
                     <div>
-                      <span className="inline-block border-white border text-accent-foreground text-xs sm:text-sm px-3 py-1 rounded-full mb-3 sm:mb-4">
+                      <span className="inline-block border border-white text-white text-xs sm:text-sm px-3 py-1 rounded-full mb-3">
                         {currentCard.title}
                       </span>
 
-                      <p className="text-sm sm:text-base text-white mb-6 md:mb-8 leading-relaxed">
+                      <p className="text-sm sm:text-base text-white leading-relaxed">
                         {currentCard.desc}
                       </p>
                     </div>
 
-                    <div className="flex justify-center md:justify-start">
+                    <div className="flex justify-center md:justify-start mt-4">
                       <img
                         src={Logo}
                         alt="Everson Logo"
@@ -182,19 +169,17 @@ const HeroAndFeatured = () => {
               </AnimatePresence>
             </Card>
 
-            {/* Right Card */}
-            <Card className="overflow-hidden group cursor-pointer h-[250px] sm:h-[300px] md:h-[350px] col-span-12 md:col-span-3">
+            {/* Right */}
+            <Card className="overflow-hidden h-[250px] sm:h-[300px] md:h-[350px] col-span-12 md:col-span-3">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentRightImg}
                   src={currentRightImg}
-                  alt="Right Product"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.6 }}
-                  // ✅ Mobile fix only
-                  className="w-full h-full object-cover md:object-cover sm:object-contain"
+                  className="w-full h-full object-cover"
                 />
               </AnimatePresence>
             </Card>

@@ -6,7 +6,9 @@ import ProductShowcase from "@/components/MainPage/ProductShowcase";
 import CTASection from "@/components/MainPage/CTASection";
 import BlueprintsSection from "@/components/MainPage/BlueprintsSection";
 import OurSection from "@/components/MainPage/Our";
-import B from "@/assets/B.pdf"; // <-- import your PDF
+import B from "@/assets/B.pdf";
+import { Download } from "lucide-react";
+
 
 const Index = () => {
   const handleDownload = () => {
@@ -28,12 +30,14 @@ const Index = () => {
       <Footer />
 
       {/* Sticky Download Button */}
-      <button
-        onClick={handleDownload}
-        className="fixed bottom-6 right-6 bg-[#587583] hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-full shadow-lg transition-all duration-300 z-50"
-      >
-        Download Brochure
-      </button>
+<button
+  onClick={handleDownload}
+  aria-label="Download Brochure"
+  className="fixed bottom-6 right-6 bg-[#587583] hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center"
+>
+  <Download size={22} />
+</button>
+
     </div>
   );
 };
