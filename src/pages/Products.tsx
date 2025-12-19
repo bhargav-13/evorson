@@ -161,96 +161,62 @@ const Products = () => {
     return "Bag Size";
   };
 
-return (
-  <div className="min-h-screen flex flex-col bg-[#F8FAFA]">
-    <Navigation />
+  return (
+    <div className="min-h-screen flex flex-col bg-[#F8FAFA]">
+      <Navigation />
 
-    {/* Header */}
-    <section className="text-center py-12 px-4">
-      <h1 className="text-5xl font-bold text-[#3A4A4F] mb-3">Everson</h1>
-      <h2 className="text-3xl font-semibold text-[#3A4A4F] mb-6">Products</h2>
-      <p className="text-[#587583] text-lg max-w-3xl mx-auto leading-relaxed">
-        Carry Your Brand with Unmatched Quality. Discover our premium
-        non-woven bags designed for durability, perfected for your branding,
-        and crafted to make every carry a statement of excellence.
-      </p>
-    </section>
+      {/* Header */}
+      <section className="text-center py-12 px-4">
+        <h1 className="text-5xl font-bold text-[#3A4A4F] mb-3">Everson</h1>
+        <h2 className="text-3xl font-semibold text-[#3A4A4F] mb-6">Products</h2>
+        <p className="text-[#587583] text-lg max-w-3xl mx-auto leading-relaxed">
+          Carry Your Brand with Unmatched Quality. Discover our premium
+          non-woven bags designed for durability, perfected for your branding,
+          and crafted to make every carry a statement of excellence.
+        </p>
+      </section>
 
-    {/* Products Section */}
-    <section className="container mx-auto px-4 pb-20 space-y-12">
-      {productList.map((product, index) => (
-        <div
-          key={index}
-          className="border border-[#D9E0E1] bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
-        >
-          {/* Left Side - Images */}
-          <div className="grid grid-cols-5 gap-4">
-            {/* Small images */}
-            <div className="flex flex-col justify-between col-span-1 h-[220px] sm:h-[280px] md:h-[400px] space-y-3">
-              {product.images.slice(1).map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt=""
-                  className="w-full h-1/3 object-cover border border-gray-300 rounded-md"
-                />
-              ))}
-            </div>
+      {/* Products Section */}
+      <section className="container mx-auto px-4 pb-20 space-y-12">
+        {productList.map((product, index) => (
+          <div
+            key={index}
+            className="border border-[#D9E0E1] bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
+          >
+            {/* Left Side - Images */}
+<div className="grid grid-cols-5 gap-4">
+  {/* Small images */}
+  <div className="flex flex-col justify-between col-span-1 h-[220px] sm:h-[280px] md:h-[400px] space-y-1">
+    {product.images.slice(1).map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        alt=""
+        className="w-full flex-1 object-contain rounded-md"
+      />
+    ))}
+  </div>
 
-            {/* Main image */}
-            <div className="col-span-4">
-              <img
-                src={product.images[0]}
-                alt={product.title}
-                className="w-full h-[220px] sm:h-[280px] md:h-[400px] object-cover border border-gray-300 rounded-md"
-              />
-              <p className="text-center mt-3 font-medium text-lg">
-                {product.title}
-              </p>
-            </div>
-          </div>
+  {/* Main image */}
+  <div className="col-span-4">
+    <img
+      src={product.images[0]}
+      alt={product.title}
+      className="w-full h-[220px] sm:h-[280px] md:h-[400px] object-contain rounded-md"
+    />
+    <p className="text-center mt-3 font-medium text-lg">
+      {product.title}
+    </p>
+  </div>
+</div>
 
-          {/* Right Side */}
-          <div className="flex flex-col gap-6 text-[#3A4A4F]">
-            {/* Regular */}
-            <div>
-              <h4 className="text-lg font-semibold mb-2">
-                {getLabel(product.title)}
-              </h4>
 
-              <div className="border border-[#D9E0E1]">
-                <div className="flex border-b border-[#D9E0E1]">
-                  <div className="w-[120px] flex justify-center items-center border-r text-[#587583] font-medium">
-                    {getLabel(product.title)}
-                  </div>
-                  <div className="flex flex-wrap flex-1">
-                    {product.regularSizes.map((size, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 min-w-[80px] text-center border-l py-2 text-sm"
-                      >
-                        {size}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex">
-                  <div className="w-[120px] flex justify-center items-center border-r text-[#587583] font-medium">
-                    GSM
-                  </div>
-                  <div className="flex-1 text-center py-2 text-sm">
-                    {product.regularGSM}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Jumbo */}
-            {product.jumboSizes && (
+            {/* Right Side */}
+            <div className="flex flex-col gap-6 text-[#3A4A4F]">
+              {/* Regular table */}
               <div>
                 <h4 className="text-lg font-semibold mb-2">
-                  Jumbo {getLabel(product.title)}
+                  {getLabel(product.title)}
                 </h4>
 
                 <div className="border border-[#D9E0E1]">
@@ -259,7 +225,7 @@ return (
                       {getLabel(product.title)}
                     </div>
                     <div className="flex flex-wrap flex-1">
-                      {product.jumboSizes.map((size, i) => (
+                      {product.regularSizes.map((size, i) => (
                         <div
                           key={i}
                           className="flex-1 min-w-[80px] text-center border-l py-2 text-sm"
@@ -275,26 +241,61 @@ return (
                       GSM
                     </div>
                     <div className="flex-1 text-center py-2 text-sm">
-                      {product.jumboGSM}
+                      {product.regularGSM}
                     </div>
                   </div>
                 </div>
               </div>
-            )}
 
-            <ul className="list-disc ml-5 text-sm text-[#587583]">
-              {product.notes.map((note, i) => (
-                <li key={i}>{note}</li>
-              ))}
-            </ul>
+              {/* Jumbo table */}
+              {product.jumboSizes && (
+                <div>
+                  <h4 className="text-lg font-semibold mb-2">
+                    Jumbo {getLabel(product.title)}
+                  </h4>
+
+                  <div className="border border-[#D9E0E1]">
+                    <div className="flex border-b border-[#D9E0E1]">
+                      <div className="w-[120px] flex justify-center items-center border-r text-[#587583] font-medium">
+                        {getLabel(product.title)}
+                      </div>
+                      <div className="flex flex-wrap flex-1">
+                        {product.jumboSizes.map((size, i) => (
+                          <div
+                            key={i}
+                            className="flex-1 min-w-[80px] text-center border-l py-2 text-sm"
+                          >
+                            {size}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex">
+                      <div className="w-[120px] flex justify-center items-center border-r text-[#587583] font-medium">
+                        GSM
+                      </div>
+                      <div className="flex-1 text-center py-2 text-sm">
+                        {product.jumboGSM}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <ul className="list-disc ml-5 text-sm text-[#587583]">
+                {product.notes.map((note, i) => (
+                  <li key={i}>{note}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      ))}
-    </section>
+        ))}
+      </section>
 
-    <Footer />
-  </div>
-);
+      <Footer />
+    </div>
+  );
 };
 
 export default Products;
