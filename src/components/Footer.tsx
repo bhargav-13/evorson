@@ -34,7 +34,7 @@ const Footer = () => {
                 href="tel:+917905378953"
                 className="hover:underline"
               >
-                +91 79053 78953
+                +91 70953 78953
               </a>
             </p>
           </div>
@@ -86,56 +86,6 @@ const Footer = () => {
                     className="hover:underline"
                   >
                     Contact
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            {/* Normal gap - Desktop only */}
-            <div className="hidden md:block md:w-[40px]"></div>
-
-            {/* Categories */}
-            <div className="flex-1 md:w-[150px] space-y-2">
-              <h3 className="font-bold mb-4 text-xl">Categories</h3>
-              <ul className="space-y-2">
-                <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Non woven
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Loop Bag
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Garbage Bag
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Table cloth
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Airline headset
                   </button>
                 </li>
               </ul>
