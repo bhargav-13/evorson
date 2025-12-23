@@ -1,5 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 
 // ✅ Import all product images
 import p11 from "@/assets/p11.png";
@@ -161,6 +164,24 @@ const Products = () => {
     return "Bag Size";
   };
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      let id = location.hash.replace("#", "");
+
+      // ✅ MAP D-CUT BAG → SHOPPING BAG
+      if (id === "carry-bag-w-u-cut") {
+        id = "shopping-bag";
+      }
+
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FAFA]">
       <Navigation />
@@ -178,80 +199,50 @@ const Products = () => {
 
       {/* Products Section */}
       <section className="container mx-auto px-4 pb-20 space-y-12">
-        {productList.map((product, index) => (
-          <div
-            key={index}
-            className="border border-[#D9E0E1] bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
-          >
-            {/* Left Side - Images */}
-<div className="grid grid-cols-5 gap-4">
-  {/* Small images */}
-  <div className="flex flex-col justify-between col-span-1 h-[220px] sm:h-[280px] md:h-[400px] space-y-1">
-    {product.images.slice(1).map((img, i) => (
-      <img
-        key={i}
-        src={img}
-        alt=""
-        className="w-full flex-1 object-contain rounded-md"
-      />
-    ))}
-  </div>
+        {productList.map((product, index) => {
+          const productId = product.title
+            .toLowerCase()
+            .replace(/\s+|\/+/g, "-");
 
-  {/* Main image */}
-  <div className="col-span-4">
-    <img
-      src={product.images[0]}
-      alt={product.title}
-      className="w-full h-[220px] sm:h-[280px] md:h-[400px] object-contain rounded-md"
-    />
-    <p className="text-center mt-3 font-medium text-lg">
-      {product.title}
-    </p>
-  </div>
-</div>
+          return (
+            <div
+              key={index}
+              id={productId}
+              className="border border-[#D9E0E1] bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
+            >
+              {/* Left Side - Images */}
+              <div className="grid grid-cols-5 gap-4">
+                {/* Small images */}
+                <div className="flex flex-col justify-between col-span-1 h-[220px] sm:h-[280px] md:h-[400px] space-y-1">
+                  {product.images.slice(1).map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt=""
+                      className="w-full flex-1 object-contain rounded-md"
+                    />
+                  ))}
+                </div>
 
-
-            {/* Right Side */}
-            <div className="flex flex-col gap-6 text-[#3A4A4F]">
-              {/* Regular table */}
-              <div>
-                <h4 className="text-lg font-semibold mb-2">
-                  {getLabel(product.title)}
-                </h4>
-
-                <div className="border border-[#D9E0E1]">
-                  <div className="flex border-b border-[#D9E0E1]">
-                    <div className="w-[120px] flex justify-center items-center border-r text-[#587583] font-medium">
-                      {getLabel(product.title)}
-                    </div>
-                    <div className="flex flex-wrap flex-1">
-                      {product.regularSizes.map((size, i) => (
-                        <div
-                          key={i}
-                          className="flex-1 min-w-[80px] text-center border-l py-2 text-sm"
-                        >
-                          {size}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex">
-                    <div className="w-[120px] flex justify-center items-center border-r text-[#587583] font-medium">
-                      GSM
-                    </div>
-                    <div className="flex-1 text-center py-2 text-sm">
-                      {product.regularGSM}
-                    </div>
-                  </div>
+                {/* Main image */}
+                <div className="col-span-4">
+                  <img
+                    src={product.images[0]}
+                    alt={product.title}
+                    className="w-full h-[220px] sm:h-[280px] md:h-[400px] object-contain rounded-md"
+                  />
+                  <p className="text-center mt-3 font-medium text-lg">
+                    {product.title}
+                  </p>
                 </div>
               </div>
 
-              {/* Jumbo table */}
-              {product.jumboSizes && (
+              {/* Right Side */}
+              <div className="flex flex-col gap-6 text-[#3A4A4F]">
+                {/* Regular table */}
                 <div>
                   <h4 className="text-lg font-semibold mb-2">
-                    Jumbo {getLabel(product.title)}
+                    {getLabel(product.title)}
                   </h4>
 
                   <div className="border border-[#D9E0E1]">
@@ -260,7 +251,7 @@ const Products = () => {
                         {getLabel(product.title)}
                       </div>
                       <div className="flex flex-wrap flex-1">
-                        {product.jumboSizes.map((size, i) => (
+                        {product.regularSizes.map((size, i) => (
                           <div
                             key={i}
                             className="flex-1 min-w-[80px] text-center border-l py-2 text-sm"
@@ -276,26 +267,63 @@ const Products = () => {
                         GSM
                       </div>
                       <div className="flex-1 text-center py-2 text-sm">
-                        {product.jumboGSM}
+                        {product.regularGSM}
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
 
-              <ul className="list-disc ml-5 text-sm text-[#587583]">
-                {product.notes.map((note, i) => (
-                  <li key={i}>{note}</li>
-                ))}
-              </ul>
+                {/* Jumbo table */}
+                {product.jumboSizes && (
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">
+                      Jumbo {getLabel(product.title)}
+                    </h4>
+
+                    <div className="border border-[#D9E0E1]">
+                      <div className="flex border-b border-[#D9E0E1]">
+                        <div className="w-[120px] flex justify-center items-center border-r text-[#587583] font-medium">
+                          {getLabel(product.title)}
+                        </div>
+                        <div className="flex flex-wrap flex-1">
+                          {product.jumboSizes.map((size, i) => (
+                            <div
+                              key={i}
+                              className="flex-1 min-w-[80px] text-center border-l py-2 text-sm"
+                            >
+                              {size}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex">
+                        <div className="w-[120px] flex justify-center items-center border-r text-[#587583] font-medium">
+                          GSM
+                        </div>
+                        <div className="flex-1 text-center py-2 text-sm">
+                          {product.jumboGSM}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <ul className="list-disc ml-5 text-sm text-[#587583]">
+                  {product.notes.map((note, i) => (
+                    <li key={i}>{note}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </section>
 
       <Footer />
     </div>
   );
 };
+
 
 export default Products;

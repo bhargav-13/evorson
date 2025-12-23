@@ -7,10 +7,14 @@ const Footer = () => {
   const navigate = useNavigate();
 
   // ✅ Smooth scroll + navigate function
-  const handleNavigation = (path: string) => {
+ const handleNavigation = (path: string) => {
+  
+  if (!path.includes("#")) {
     window.scrollTo(0, 0);
-    navigate(path);
-  };
+  }
+  navigate(path);
+};
+
 
   return (
     <footer className="relative bg-[#587583] text-white overflow-hidden">
@@ -99,44 +103,49 @@ const Footer = () => {
               <h3 className="font-bold mb-4 text-xl">Products</h3>
               <ul className="space-y-2">
                 <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Shoes Bag
-                  </button>
+<button
+  onClick={() => handleNavigation("/products#shoes-bag-agri-bag")}
+  className="hover:underline"
+>
+  Shoes Bag
+</button>
+
                 </li>
                 <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Agri Bag
-                  </button>
+<button
+  onClick={() => handleNavigation("/products#shoes-bag-agri-bag")}
+  className="hover:underline"
+>
+  Agri Bag
+</button>
+
                 </li>
                 <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Box Bag
-                  </button>
+<button
+  onClick={() => handleNavigation("/products#box-bag")}
+  className="hover:underline"
+>
+  Box Bag
+</button>
+
                 </li>
                 <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    Pillow Cover
-                  </button>
+<button
+  onClick={() => handleNavigation("/products#pillow-cover")}
+  className="hover:underline"
+>
+  Pillow Cover
+</button>
+
                 </li>
                 <li>
-                  <button
-                    onClick={() => handleNavigation("/products")}
-                    className="hover:underline"
-                  >
-                    D-Cut Bag
-                  </button>
+<button
+  onClick={() => handleNavigation("/products#carry-bag-w-u-cut")}
+  className="hover:underline"
+>
+  D-Cut Bag
+</button>
+
                 </li>
               </ul>
             </div>
