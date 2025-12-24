@@ -112,7 +112,7 @@ const productList = [
   },
   {
     title: "Box Bag",
-    regularSizes: ["10×10×10", "10×14×14", "12×10×12", "12×14×14", "15×17×14"],
+    regularSizes: ["10×10×10", "12x11x12", "10x13x4", "12x15x4", "15×17×4", "17x15x4"],
     regularGSM: "60 to 100",
     notes: [
       "Customized Size Also Available",

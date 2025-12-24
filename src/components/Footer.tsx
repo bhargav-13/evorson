@@ -101,53 +101,61 @@ const Footer = () => {
             {/* Products */}
             <div className="flex-1 md:w-[150px] space-y-2">
               <h3 className="font-bold mb-4 text-xl">Products</h3>
-              <ul className="space-y-2">
-                <li>
-<button
-  onClick={() => handleNavigation("/products#shoes-bag-agri-bag")}
-  className="hover:underline"
->
-  W-cut
-</button>
+<ul className="space-y-2">
+  <li>
+    <button
+      onClick={() =>
+        handleNavigation("/products#carry-bag-(w,-u-cut)")
+      }
+      className="hover:underline"
+    >
+      W-cut
+    </button>
+  </li>
 
-                </li>
-                <li>
-<button
-  onClick={() => handleNavigation("/products#shoes-bag-agri-bag")}
-  className="hover:underline"
->
-  D-cut
-</button>
+  <li>
+    <button
+      onClick={() =>
+        handleNavigation("/products#shopping-bag-(d-cut)")
+      }
+      className="hover:underline"
+    >
+      D-cut
+    </button>
+  </li>
 
-                </li>
-                <li>
-<button
-  onClick={() => handleNavigation("/products#box-bag")}
-  className="hover:underline"
->
-  Box Bag
-</button>
+  <li>
+    <button
+      onClick={() => handleNavigation("/products#box-bag")}
+      className="hover:underline"
+    >
+      Box Bag
+    </button>
+  </li>
 
-                </li>
-                <li>
-<button
-  onClick={() => handleNavigation("/products#pillow-cover")}
-  className="hover:underline"
->
- loop handle bag
-</button>
+  <li>
+    <button
+      onClick={() =>
+        handleNavigation("/products#loop-handle-bag")
+      }
+      className="hover:underline"
+    >
+      Loop Handle Bag
+    </button>
+  </li>
 
-                </li>
-                <li>
-<button
-  onClick={() => handleNavigation("/products#carry-bag-w-u-cut")}
-  className="hover:underline"
->
-  non woven rolls
-</button>
+  <li>
+    <button
+      onClick={() =>
+        handleNavigation("/products#non-woven-rolls")
+      }
+      className="hover:underline"
+    >
+      Non Woven Rolls
+    </button>
+  </li>
+</ul>
 
-                </li>
-              </ul>
             </div>
           </div>
 
