@@ -107,7 +107,7 @@ const Footer = () => {
   onClick={() => handleNavigation("/products#shoes-bag-agri-bag")}
   className="hover:underline"
 >
-  Shoes Bag
+  W-cut
 </button>
 
                 </li>
@@ -116,7 +116,7 @@ const Footer = () => {
   onClick={() => handleNavigation("/products#shoes-bag-agri-bag")}
   className="hover:underline"
 >
-  Agri Bag
+  D-cut
 </button>
 
                 </li>
@@ -134,7 +134,7 @@ const Footer = () => {
   onClick={() => handleNavigation("/products#pillow-cover")}
   className="hover:underline"
 >
-  Pillow Cover
+ loop handle bag
 </button>
 
                 </li>
@@ -143,7 +143,7 @@ const Footer = () => {
   onClick={() => handleNavigation("/products#carry-bag-w-u-cut")}
   className="hover:underline"
 >
-  D-Cut Bag
+  non woven rolls
 </button>
 
                 </li>
@@ -167,7 +167,7 @@ const Footer = () => {
         {/* Description Text - separate */}
         <div className="mt-10">
           <p className="text-xl max-w-[400px] mb-8 leading-relaxed font-semibold">
-            Everson India Limited
+            Everson India Private Limited
           </p>
           <p className="text-xl max-w-[400px] leading-relaxed">
             Manufacturer of premium non-woven bags, covers, and fabric products

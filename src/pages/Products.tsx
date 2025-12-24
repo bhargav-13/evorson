@@ -67,15 +67,15 @@ const productList = [
     images: [p11, p12, p13, p14],
   },
   {
-    title: "Shopping Bag",
-    regularSizes: ["9×12", "10×14", "12×16", "12×18", "14×19", "16×24"],
+    title: "Shopping Bag (D-Cut)",
+    regularSizes: ["9×12", "10×14", "12×16", "12×18", "14×19", "16×21"],
     regularGSM: "40 to 80",
     notes: ["Customized Size Available"],
     images: [p21, p22, p23, p24],
   },
   {
     title: "Loop Handle Bag",
-    regularSizes: ["10×13", "12×14", "14×17", "16×19", "18×20"],
+    regularSizes: ["10×13", "12×15", "14×17", "16×20", "18×22"],
     regularGSM: "60 to 100",
     notes: [
       "Customized Size Available",
@@ -122,7 +122,7 @@ const productList = [
   },
   {
     title: "Garbage Bag",
-    regularSizes: ["17×19", "21×24", "24×32", "30×37", "30×50"],
+    regularSizes: ["17×19", "19x21", "24×32", "30×37", "30×50"],
     regularGSM: "60 to 80",
     notes: [
       "Customized Size Also Available",
