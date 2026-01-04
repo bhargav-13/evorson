@@ -35,7 +35,7 @@ const Footer = () => {
             {/* ✅ Updated phone number with clickable dial link */}
             <p>
               <a
-                href="tel:+917905378953"
+                href="tel:+917095378953"
                 className="hover:underline"
               >
                 +91 70953 78953

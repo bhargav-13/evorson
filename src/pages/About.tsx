@@ -65,7 +65,7 @@ const About = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent flex items-end">
                 <div className="p-8 text-white">
-                  <h2 className="text-3xl font-bold mb-3">Our Story</h2>
+                  {/* <h2 className="text-3xl font-bold mb-3">Our Story</h2>
                   <p className="text-sm leading-relaxed opacity-90">
                     It began with a vision to replace plastic with purpose. We
                     saw a bag not just as a utility, but as a durable, walking
@@ -73,7 +73,7 @@ const About = () => {
                     you to create high-quality, custom non-woven bags that carry
                     your name and our shared commitment to a greener planet.
                     Let's build a sustainable future, together.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
