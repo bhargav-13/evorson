@@ -61,10 +61,10 @@ const Contact = () => {
                 <p className="text-base text-[#394D57]">
                   {/* Phone link opens dial pad */}
                   <a
-                    href="tel:+917905378953"
+                    href="tel:+917095378953"
                     className="text-[#394D57] hover:text-[#587583] hover:underline transition-colors duration-200"
                   >
-                    +91 79053 78953
+                    +91 70953 78953
                   </a>
                   <br />
                   {/* Email link */}
