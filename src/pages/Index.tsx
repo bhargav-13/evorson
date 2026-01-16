@@ -32,7 +32,7 @@ const Index = () => {
       <button
         onClick={handleDownload}
         aria-label="Download Brochure"
-        className="fixed bottom-6 right-6 bg-[#587583] hover:bg-blue-700 text-white px-5 py-3 rounded-full shadow-lg transition-all duration-300 z-50 flex items-center gap-2"
+        className="fixed bottom-6 right-6 bg-[#587583] hover:bg-blue-700 text-white px-5 py-3 rounded-full shadow-lg transition-all duration-300 z-30 flex items-center gap-2"
       >
         <FileText size={20} />
         <span className="font-medium text-sm">Brochure</span>

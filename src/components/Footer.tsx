@@ -29,7 +29,7 @@ const Footer = () => {
                 href="mailto:info@everson.in"
                 className="hover:underline"
               >
-                info@everson.in
+                 sales@everson.in
               </a>
             </p>
             {/* ✅ Updated phone number with clickable dial link */}
