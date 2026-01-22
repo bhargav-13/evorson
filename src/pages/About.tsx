@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-import teamMeeting from "@/assets/About_people.png";
+import teamMeeting from "@/assets/About_people .jpeg";
 import productCollage from "@/assets/About_bag.png";
 
 const About = () => {
@@ -63,19 +63,6 @@ const About = () => {
                 alt="Our Story"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent flex items-end">
-                <div className="p-8 text-white">
-                  {/* <h2 className="text-3xl font-bold mb-3">Our Story</h2>
-                  <p className="text-sm leading-relaxed opacity-90">
-                    It began with a vision to replace plastic with purpose. We
-                    saw a bag not just as a utility, but as a durable, walking
-                    billboard for your brand's values. Today, we partner with
-                    you to create high-quality, custom non-woven bags that carry
-                    your name and our shared commitment to a greener planet.
-                    Let's build a sustainable future, together.
-                  </p> */}
-                </div>
-              </div>
             </div>
 
             {/* Mission & Vision Cards */}
@@ -112,18 +99,19 @@ const About = () => {
       </section>
 
       {/* Purpose in Every Product */}
+{/* Purpose in Every Product */}
 <section className="py-16 px-4 bg-background text-[#394D57]">
   <div className="container mx-auto max-w-7xl">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* Product Collage */}
-      <div className="order-2 lg:order-1 flex justify-center">
-        <div className="relative rounded-lg overflow-hidden shadow-xl w-full max-w-[500px] lg:max-w-[550px]">
-<img
-  src={productCollage}
-  alt="Product Collage"
-  className="w-full h-[400px] sm:h-[460px] md:h-[520px] object-cover rounded-lg"
-/>
 
+      {/* Product Collage Image */}
+      <div className="order-2 lg:order-1">
+        <div className="relative rounded-lg overflow-hidden shadow-xl w-full h-[446px]">
+          <img
+            src={productCollage}
+            alt="Product Collage"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -149,24 +137,22 @@ const About = () => {
           alternatives that make life easier while protecting the planet.
         </p>
 
-<Button
-  variant="outline"
-  className="group rounded-full border-[#394D57] text-[#394D57] hover:bg-[#394D57] hover:text-white px-6 py-3 text-base sm:text-lg transition-all"
-  asChild
->
-  <Link
-    to="/products"
-    onClick={() => window.scrollTo(0, 0)} // ✅ scrolls to top on click
-  >
-    Explore more
-    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-  </Link>
-</Button>
-
+        <Button
+          variant="outline"
+          className="group rounded-full border-[#394D57] text-[#394D57] hover:bg-[#394D57] hover:text-white px-6 py-3 text-base sm:text-lg transition-all"
+          asChild
+        >
+          <Link to="/products" onClick={() => window.scrollTo(0, 0)}>
+            Explore more
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </Button>
       </div>
+
     </div>
   </div>
 </section>
+
 
 
       {/* The Spirit of Everson */}
